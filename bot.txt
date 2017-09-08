@@ -1,0 +1,16 @@
+page access token
+
+EAAEiPn5F0T4BACJMMq49Rt5w7i5ZC11sJu3GcQ2zPVwaOtgzsN0YDrZAyzUhj8ZAu87VtdDKlSZCQyfxN2gQdHl5jIbR3axNPCc2cDFuJL8cdvsMgycgneY4ZAOkV4vEYRTjBub5e2HObidasmI1rZCqRiMgBx4T4SYcpnOcEfOAZDZD
+
+APP_ID
+319126778532158
+
+
+APP_SECRET_KEY
+fbfc99088856b92b33284c6cf5a32bf4
+
+webhook
+https://350bbo09qa.execute-api.us-east-1.amazonaws.com/dev/webhook
+
+arbitrary api token
+0a738183-9daf-4f05-af28-3d560f0a3ea2
