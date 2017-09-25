@@ -55,6 +55,20 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
+  login:
+    handler: handler.login
+    events:
+      - http:
+          path: login
+          method: get
+          
+  validate:
+    handler: handler.validate
+    events:
+      - http:
+          path: validate
+          method: post
+
   hello:
     handler: handler.hello
     events:

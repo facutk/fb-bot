@@ -22,6 +22,31 @@ module.exports.hello = (event, context, callback) => {
   // callback(null, { message: 'Go Serverless v1.0! Your function executed successfully!', event });
 };
 
+module.exports.login = (event, context, callback) => {
+  const response = {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "text/html; charset=utf-8"
+    },
+    body: `<!DOCTYPE html><meta content="width=device-width,initial-scale=1"name=viewport><style>html{font-family:sans-serif;background-image:radial-gradient(ellipse farthest-side at 35% -16%,#4bc4e1 0,#3db9d6 12.97%,#1b9ebc 36.11%,#05557a 100%);color:#fff;background-size:cover;background-repeat:no-repeat;height:100%}form{display:flex;flex-direction:column}.title{text-align:center}input[type=password],input[type=text]{width:100%;padding:12px 20px;margin:8px 0;display:inline-block;border:none;border-radius:2px;box-sizing:border-box;background-color:rgba(0,0,0,.4);color:#fff;font-size:14px}button{background-color:#4caf50;color:#fff;padding:14px 20px;margin:8px 0;border:none;cursor:pointer;width:100%}button:hover{opacity:.8}.cancelbtn{width:auto;padding:10px 18px;background-color:#f44336}.container{padding:16px;max-width:600px;margin:auto}.loginbtn{background:#fff;color:#1b9ebc;height:48px;width:100%;border:none;border-radius:2px;font-size:14px}</style><form method=post action='validate'><h2 class=title>service</h2><div class=container><input type=text name=email placeholder="Email address" required> <input name=password placeholder=Password required type=password> <button class=loginbtn type=submit>Login</button></div></form>`
+  };
+
+  callback(null, response);
+};
+
+module.exports.validate = (event, context, callback) => {
+  const response = {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    body: JSON.stringify(event)
+  };
+
+  callback(null, response);
+};
+
 module.exports.webhook = (event, context, callback) => {
     if(event.queryStringParameters){
         const queryParams = event.queryStringParameters;
@@ -220,7 +245,7 @@ function sendLoginMessage(recipientId) {
             subtitle: "Login to continue",
             buttons: [{
               type: "account_link",
-              url: "https://apps.elementum.com/auth/login"
+              url: "https://350bbo09qa.execute-api.us-east-1.amazonaws.com/dev/login"
             }]
           }]
         }
